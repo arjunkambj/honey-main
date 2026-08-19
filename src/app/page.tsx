@@ -1,68 +1,221 @@
+import { ArrowUpRight01Icon, NewTwitterIcon } from "@hugeicons/core-free-icons";
 import Image from "next/image";
+import { EmailButton } from "@/components/copy-email";
+import { Icon } from "@/components/icon";
+import { SolarIcon } from "@/components/solar-icon";
+import { FooterEmailButton } from "@/components/footer-email";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { links, projects, site, stack, work } from "@/lib/site";
+
+function Pill({
+  href,
+  icon,
+  children,
+  solid = false,
+}: {
+  href: string;
+  icon: React.ComponentProps<typeof Icon>["icon"];
+  children: string;
+  solid?: boolean;
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className={
+        solid
+          ? "inline-flex h-9 items-center gap-2 rounded-xl bg-foreground px-3.5 text-sm font-medium text-background transition-opacity hover:opacity-80"
+          : "inline-flex h-9 items-center gap-2 rounded-xl bg-muted px-3.5 text-sm font-medium transition-colors hover:bg-muted/80"
+      }
+    >
+      <Icon icon={icon} className="size-4" />
+      {children}
+    </a>
+  );
+}
+
+const pillMuted =
+  "inline-flex h-9 items-center gap-2 rounded-xl bg-muted px-3.5 text-sm font-medium transition-colors hover:bg-muted/80";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <div className="flex flex-1 justify-center px-6 pt-8 pb-8 sm:px-8 sm:pt-10 sm:pb-10">
+      <main className="flex w-full max-w-2xl flex-col gap-16">
+        <header className="flex flex-col gap-7">
+          <div className="flex items-center justify-between gap-4">
+            <p className="text-sm text-muted-foreground">Hey, it's me</p>
+            <ThemeToggle />
+          </div>
+
+          <div className="flex items-center gap-4">
             <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+              src="/honey.jpg"
+              alt="Honey"
+              width={64}
+              height={64}
+              priority
+              className="size-16 rounded-2xl object-cover"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+            <div className="flex min-w-0 flex-col gap-1">
+              <h1 className="font-display text-[2.6rem] leading-none tracking-[0.08em] uppercase sm:text-5xl">
+                {site.name}
+              </h1>
+              <p className="text-sm text-muted-foreground">
+                {site.role} / {site.handle}
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-4 text-base leading-7">
+            <p>
+              Yup. I'm a{" "}
+              <span className="font-medium">
+                designer and full-stack developer
+              </span>
+              . Started coding in 2024. I love designing UI, writing code, and
+              reading books (fiction).
+            </p>
+            <p className="text-muted-foreground">
+              I help small teams build early product, from first idea to
+              working product.
+            </p>
+            <p className="text-muted-foreground">
+              Before this: YouTube to 160k, crypto & marketing ops, a D2C brand,
+              then a UGC agency that made content for 160 brands.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-3">
+            <Pill href={site.twitter} icon={NewTwitterIcon} solid>
+              Twitter DM
+            </Pill>
+            <span className="text-xs tracking-[0.18em] text-muted-foreground">
+              OR
+            </span>
+            <EmailButton className={pillMuted}>Email me</EmailButton>
+          </div>
+        </header>
+
+        <section className="flex flex-col gap-6">
+          <h2 className="text-sm font-medium">Tech stack I like</h2>
+          <ul className="flex flex-wrap gap-2">
+            {stack.map((item) => (
+              <li
+                key={item.name}
+                className="inline-flex h-9 items-center gap-2 rounded-xl bg-muted px-3 text-sm font-medium"
+              >
+                <SolarIcon
+                  icon={item.icon}
+                  className="size-4"
+                  style={{ color: item.color }}
+                />
+                {item.name}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="flex flex-col">
+          <h2 className="text-sm font-medium">Work</h2>
+          <ul className="mt-3 flex flex-col border-t border-border">
+            {work.map((item) => {
+              const row = (
+                <div className="flex items-start justify-between gap-4 py-3.5">
+                  <div className="flex min-w-0 flex-col gap-0.5">
+                    <h3 className="text-[14px] font-medium leading-none text-foreground">
+                      {item.title}
+                    </h3>
+                    <p className="text-[13px] leading-5 text-muted-foreground">
+                      {item.role}
+                    </p>
+                  </div>
+                  <p className="shrink-0 pt-0.5 text-[13px] tabular-nums text-muted-foreground">
+                    {item.dates}
+                  </p>
+                </div>
+              );
+
+              return (
+                <li key={item.title} className="border-b border-border">
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="block transition-colors hover:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                    >
+                      {row}
+                    </a>
+                  ) : (
+                    row
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+
+        <section className="flex flex-col gap-6">
+          <h2 className="text-sm font-medium">Projects</h2>
+          <ul className="flex flex-col gap-2">
+            {projects.map((project) => (
+              <li key={project.name}>
+                <a
+                  href={project.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex items-center gap-3 rounded-2xl bg-muted/60 px-3.5 py-3 transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                >
+                  <div className="flex min-w-0 flex-1 flex-col gap-0.5">
+                    <h3 className="text-[15px] font-medium leading-none tracking-tight">{project.name}</h3>
+                    <p className="truncate text-[13px] leading-4 text-muted-foreground">
+                      {project.summary}
+                    </p>
+                  </div>
+                  <Icon
+                    icon={ArrowUpRight01Icon}
+                    strokeWidth={1.75}
+                    className="size-3.5 shrink-0 text-muted-foreground/60 transition-all group-hover:text-foreground group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <footer className="flex flex-col gap-5 border-t border-border pt-6">
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+            <div className="flex flex-col gap-2">
+              <h2 className="font-display text-sm font-semibold tracking-[0.14em] uppercase text-foreground">On the internet</h2>
+              <p className="max-w-[280px] text-sm leading-6 text-muted-foreground">
+                Open to building useful, well-made software with thoughtful people
+              </p>
+            </div>
+            <div className="flex items-center gap-1 sm:pt-1">
+              {links.map((link) =>
+                "copy" in link && link.copy ? (
+                  <FooterEmailButton key={link.label} />
+                ) : (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={link.label}
+                    className="flex size-9 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                  >
+                    <Icon icon={link.icon} className="size-4" />
+                  </a>
+                ),
+              )}
+            </div>
+          </div>
+          <div className="flex items-center justify-between text-xs text-muted-foreground">
+            <p>© {new Date().getFullYear()} Honey</p>
+            <p>{site.location}</p>
+          </div>
+        </footer>
       </main>
     </div>
   );
