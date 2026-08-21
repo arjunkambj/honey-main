@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Geist_Pixel, Inter_Tight } from "next/font/google";
 import "./globals.css";
+import { SmoothScroll } from "@/components/smooth-scroll";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toast";
 import { site } from "@/lib/site";
@@ -45,8 +46,10 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <ThemeProvider>
-          {children}
-          <Toaster />
+          <SmoothScroll>
+            {children}
+            <Toaster />
+          </SmoothScroll>
         </ThemeProvider>
       </body>
     </html>

@@ -1,9 +1,10 @@
 import { ArrowUpRight01Icon, NewTwitterIcon } from "@hugeicons/core-free-icons";
 import Image from "next/image";
+import Link from "next/link";
 import { EmailButton } from "@/components/copy-email";
+import { FooterEmailButton } from "@/components/footer-email";
 import { Icon } from "@/components/icon";
 import { SolarIcon } from "@/components/solar-icon";
-import { FooterEmailButton } from "@/components/footer-email";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { links, projects, site, stack, work } from "@/lib/site";
 
@@ -19,7 +20,7 @@ function Pill({
   solid?: boolean;
 }) {
   return (
-    <a
+    <Link
       href={href}
       target="_blank"
       rel="noreferrer"
@@ -31,7 +32,7 @@ function Pill({
     >
       <Icon icon={icon} className="size-4" />
       {children}
-    </a>
+    </Link>
   );
 }
 
@@ -69,20 +70,17 @@ export default function Home() {
 
           <div className="flex flex-col gap-4 text-base leading-7">
             <p>
-              Yup. I'm a{" "}
-              <span className="font-medium">
-                designer and full-stack developer
-              </span>
-              . Started coding in 2024. I love designing UI, writing code, and
-              reading books (fiction).
+              Yup. I'm a <span className="font-medium">design engineer</span>. I
+              love designing UI, writing code, and reading books (fiction).
             </p>
             <p className="text-muted-foreground">
-              I help small teams build early product, from first idea to
-              working product.
+              I'm good at going from nothing to something — designing, building,
+              shipping.
             </p>
             <p className="text-muted-foreground">
-              Before this: YouTube to 160k, crypto & marketing ops, a D2C brand,
-              then a UGC agency that made content for 160 brands.
+              Before this: built an audience of 160k on YouTube, co-founded a
+              D2C brand, and co-founded a UGC agency making content for 160+
+              brands.
             </p>
           </div>
 
@@ -97,7 +95,7 @@ export default function Home() {
           </div>
         </header>
 
-        <section className="flex flex-col gap-6">
+        <section className="flex flex-col gap-3">
           <h2 className="text-sm font-medium">Tech stack I like</h2>
           <ul className="flex flex-wrap gap-2">
             {stack.map((item) => (
@@ -116,9 +114,9 @@ export default function Home() {
           </ul>
         </section>
 
-        <section className="flex flex-col">
+        <section className="flex flex-col gap-3">
           <h2 className="text-sm font-medium">Work</h2>
-          <ul className="mt-3 flex flex-col border-t border-border">
+          <ul className="flex flex-col border-t border-border">
             {work.map((item) => {
               const row = (
                 <div className="flex items-start justify-between gap-4 py-3.5">
@@ -139,14 +137,14 @@ export default function Home() {
               return (
                 <li key={item.title} className="border-b border-border">
                   {item.href ? (
-                    <a
+                    <Link
                       href={item.href}
                       target="_blank"
                       rel="noreferrer"
                       className="block transition-colors hover:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                     >
                       {row}
-                    </a>
+                    </Link>
                   ) : (
                     row
                   )}
@@ -156,40 +154,45 @@ export default function Home() {
           </ul>
         </section>
 
-        <section className="flex flex-col gap-6">
+        <section className="flex flex-col gap-3">
           <h2 className="text-sm font-medium">Projects</h2>
-          <ul className="flex flex-col gap-2">
+          <ul className="flex flex-col border-t border-border">
             {projects.map((project) => (
-              <li key={project.name}>
-                <a
+              <li key={project.name} className="border-b border-border">
+                <Link
                   href={project.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="group flex items-center gap-3 rounded-2xl bg-muted/60 px-3.5 py-3 transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  className="group flex items-center justify-between gap-4 py-3.5 transition-colors hover:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 >
-                  <div className="flex min-w-0 flex-1 flex-col gap-0.5">
-                    <h3 className="text-[15px] font-medium leading-none tracking-tight">{project.name}</h3>
-                    <p className="truncate text-[13px] leading-4 text-muted-foreground">
+                  <div className="flex min-w-0 flex-col gap-0.5">
+                    <h3 className="text-[14px] font-medium leading-none text-foreground">
+                      {project.name}
+                    </h3>
+                    <p className="truncate text-[13px] leading-5 text-muted-foreground">
                       {project.summary}
                     </p>
                   </div>
                   <Icon
                     icon={ArrowUpRight01Icon}
                     strokeWidth={1.75}
-                    className="size-3.5 shrink-0 text-muted-foreground/60 transition-all group-hover:text-foreground group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    className="size-3.5 shrink-0 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                   />
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
         </section>
 
-        <footer className="flex flex-col gap-5 border-t border-border pt-6">
+        <footer className="mt-40 flex flex-col gap-5 border-t border-border pt-6">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
             <div className="flex flex-col gap-2">
-              <h2 className="font-display text-sm font-semibold tracking-[0.14em] uppercase text-foreground">On the internet</h2>
+              <h2 className="font-display text-sm font-semibold tracking-[0.14em] uppercase text-foreground">
+                On the internet
+              </h2>
               <p className="max-w-[280px] text-sm leading-6 text-muted-foreground">
-                Open to building useful, well-made software with thoughtful people
+                Building something new? I'm open to joining early-stage teams as
+                a design engineer.
               </p>
             </div>
             <div className="flex items-center gap-1 sm:pt-1">
@@ -197,7 +200,7 @@ export default function Home() {
                 "copy" in link && link.copy ? (
                   <FooterEmailButton key={link.label} />
                 ) : (
-                  <a
+                  <Link
                     key={link.label}
                     href={link.href}
                     target="_blank"
@@ -206,7 +209,7 @@ export default function Home() {
                     className="flex size-9 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                   >
                     <Icon icon={link.icon} className="size-4" />
-                  </a>
+                  </Link>
                 ),
               )}
             </div>

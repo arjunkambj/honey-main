@@ -1,9 +1,9 @@
 "use client";
 
 import { Moon02Icon, Sun03Icon } from "@hugeicons/core-free-icons";
-import { useTheme } from "@/components/theme-provider";
 import { useEffect, useState } from "react";
 import { Icon } from "@/components/icon";
+import { useTheme } from "@/components/theme-provider";
 
 export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
