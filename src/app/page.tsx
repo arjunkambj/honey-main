@@ -4,6 +4,7 @@ import Link from "next/link";
 import { EmailButton } from "@/components/copy-email";
 import { FooterEmailButton } from "@/components/footer-email";
 import { Icon } from "@/components/icon";
+import { Reveal } from "@/components/reveal";
 import { SolarIcon } from "@/components/solar-icon";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { links, projects, site, stack, work } from "@/lib/site";
@@ -45,77 +46,88 @@ export default function Home() {
       <main className="flex w-full max-w-2xl flex-col gap-16">
         <header className="flex flex-col gap-7">
           <div className="flex items-center justify-between gap-4">
-            <p className="text-sm text-muted-foreground">Hey, it's me</p>
+            <Reveal>
+              <p className="text-sm text-muted-foreground">Hey, it's me</p>
+            </Reveal>
             <ThemeToggle />
           </div>
 
-          <div className="flex items-center gap-4">
-            <Image
-              src="/honey.jpg"
-              alt="Honey"
-              width={64}
-              height={64}
-              priority
-              className="size-16 rounded-2xl object-cover"
-            />
-            <div className="flex min-w-0 flex-col gap-1">
-              <h1 className="font-display text-[2.6rem] leading-none tracking-[0.08em] uppercase sm:text-5xl">
-                {site.name}
-              </h1>
-              <p className="text-sm text-muted-foreground">
-                {site.role} / {site.handle}
+          <Reveal delay={0.04}>
+            <div className="flex items-center gap-4">
+              <Image
+                src="/honey.jpg"
+                alt="Honey"
+                width={64}
+                height={64}
+                priority
+                className="size-16 rounded-2xl object-cover"
+              />
+              <div className="flex min-w-0 flex-col gap-1">
+                <h1 className="font-display text-[2.6rem] leading-none tracking-[0.08em] uppercase sm:text-5xl">
+                  {site.name}
+                </h1>
+                <p className="text-sm text-muted-foreground">
+                  {site.role} / {site.handle}
+                </p>
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.08}>
+            <div className="flex flex-col gap-4 text-base leading-7">
+              <p>
+                Yup. I'm a <span className="font-medium">design engineer</span>. I
+                love designing UI, writing code, and reading books (fiction).
+              </p>
+              <p className="text-muted-foreground">
+                I'm good at going from nothing to something — designing, building,
+                shipping.
+              </p>
+              <p className="text-muted-foreground">
+                Before this: built an audience of 160k on YouTube, co-founded a
+                D2C brand, and co-founded a UGC agency making content for 160+
+                brands.
               </p>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="flex flex-col gap-4 text-base leading-7">
-            <p>
-              Yup. I'm a <span className="font-medium">design engineer</span>. I
-              love designing UI, writing code, and reading books (fiction).
-            </p>
-            <p className="text-muted-foreground">
-              I'm good at going from nothing to something — designing, building,
-              shipping.
-            </p>
-            <p className="text-muted-foreground">
-              Before this: built an audience of 160k on YouTube, co-founded a
-              D2C brand, and co-founded a UGC agency making content for 160+
-              brands.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-3">
-            <Pill href={site.twitter} icon={NewTwitterIcon} solid>
-              Twitter DM
-            </Pill>
-            <span className="text-xs tracking-[0.18em] text-muted-foreground">
-              OR
-            </span>
-            <EmailButton className={pillMuted}>Email me</EmailButton>
-          </div>
+          <Reveal delay={0.12}>
+            <div className="flex flex-wrap items-center gap-3">
+              <Pill href={site.twitter} icon={NewTwitterIcon} solid>
+                Twitter DM
+              </Pill>
+              <span className="text-xs tracking-[0.18em] text-muted-foreground">
+                OR
+              </span>
+              <EmailButton className={pillMuted}>Email me</EmailButton>
+            </div>
+          </Reveal>
         </header>
 
-        <section className="flex flex-col gap-3">
-          <h2 className="text-sm font-medium">Tech stack I like</h2>
-          <ul className="flex flex-wrap gap-2">
-            {stack.map((item) => (
-              <li
-                key={item.name}
-                className="inline-flex h-9 items-center gap-2 rounded-xl bg-muted px-3 text-sm font-medium"
-              >
-                <SolarIcon
-                  icon={item.icon}
-                  className="size-4"
-                  style={{ color: item.color }}
-                />
-                {item.name}
-              </li>
-            ))}
-          </ul>
-        </section>
+          <Reveal delay={0.16}>
+          <section className="flex flex-col gap-3">
+            <h2 className="text-sm font-medium">Tech stack I like</h2>
+            <ul className="flex flex-wrap gap-2">
+              {stack.map((item) => (
+                <li
+                  key={item.name}
+                  className="inline-flex h-9 items-center gap-2 rounded-xl bg-muted px-3 text-sm font-medium"
+                >
+                  <SolarIcon
+                    icon={item.icon}
+                    className="size-4"
+                    style={{ color: item.color }}
+                  />
+                  {item.name}
+                </li>
+              ))}
+            </ul>
+          </section>
+        </Reveal>
 
-        <section className="flex flex-col gap-3">
-          <h2 className="text-sm font-medium">Work</h2>
+          <Reveal delay={0.2}>
+          <section className="flex flex-col gap-3">
+            <h2 className="text-sm font-medium">Work</h2>
           <ul className="flex flex-col border-t border-border">
             {work.map((item) => {
               const row = (
@@ -152,10 +164,12 @@ export default function Home() {
               );
             })}
           </ul>
-        </section>
+          </section>
+        </Reveal>
 
-        <section className="flex flex-col gap-3">
-          <h2 className="text-sm font-medium">Projects</h2>
+          <Reveal delay={0.24}>
+          <section className="flex flex-col gap-3">
+            <h2 className="text-sm font-medium">Projects</h2>
           <ul className="flex flex-col border-t border-border">
             {projects.map((project) => (
               <li key={project.name} className="border-b border-border">
@@ -182,9 +196,11 @@ export default function Home() {
               </li>
             ))}
           </ul>
-        </section>
+          </section>
+        </Reveal>
 
-        <footer className="mt-40 flex flex-col gap-5 border-t border-border pt-6">
+          <Reveal delay={0.28}>
+          <footer className="flex flex-col gap-5 border-t border-border pt-6">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
             <div className="flex flex-col gap-2">
               <h2 className="font-display text-sm font-semibold tracking-[0.14em] uppercase text-foreground">
@@ -218,7 +234,8 @@ export default function Home() {
             <p>© {new Date().getFullYear()} Honey</p>
             <p>{site.location}</p>
           </div>
-        </footer>
+          </footer>
+        </Reveal>
       </main>
     </div>
   );

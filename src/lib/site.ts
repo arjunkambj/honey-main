@@ -9,7 +9,7 @@ export const site = {
   handle: "@arjunkambj",
   githubUser: "arjunkambj",
   role: "Design engineer",
-  title: "0xHoney | Design engineer",
+  title: "0xHoney | Design Engineer",
   description:
     "Design engineer. I love designing UI, writing code, and reading fiction. I'm good at going from nothing to something — designing, building, shipping. Before this: built an audience of 160k on YouTube, co-founded a D2C brand, and co-founded a UGC agency making content for 160+ brands.",
   email: "hey@0xhoney.com",
