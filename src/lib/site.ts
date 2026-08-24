@@ -66,9 +66,9 @@ export const projects = [
     summary: "Let Claude and Codex inspect and move Google and Meta spend",
   },
   {
-    name: "Setter Saga",
-    href: "https://settersaga.vercel.app/",
-    summary: "A real-time island-building board game",
+    name: "MultiFeed",
+    href: "https://themultifeed.com/",
+    summary: "Post to all your social accounts from one place",
   },
 ] as const;
 
