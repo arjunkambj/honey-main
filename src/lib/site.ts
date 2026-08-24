@@ -56,6 +56,11 @@ export const work = [
 
 export const projects = [
   {
+    name: "MultiFeed",
+    href: "https://themultifeed.com/",
+    summary: "Post to all your social accounts from one place",
+  },
+  {
     name: "Calio",
     href: "https://gocalio.com/",
     summary: "A shared business number teams can actually pick up",
@@ -64,11 +69,6 @@ export const projects = [
     name: "AdMiro",
     href: "https://www.theadmiro.com/",
     summary: "Let Claude and Codex inspect and move Google and Meta spend",
-  },
-  {
-    name: "MultiFeed",
-    href: "https://themultifeed.com/",
-    summary: "Post to all your social accounts from one place",
   },
 ] as const;
 
