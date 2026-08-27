@@ -68,7 +68,7 @@ export const projects = [
   {
     name: "AdMiro",
     href: "https://www.theadmiro.com/",
-    summary: "Let Claude and Codex inspect and move Google and Meta spend",
+    summary: "Let Claude and Codex run your ads",
   },
 ] as const;
 
