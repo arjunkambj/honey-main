@@ -61,6 +61,11 @@ export const projects = [
     summary: "Post to all your social accounts from one place",
   },
   {
+    name: "Honeyicons",
+    href: "https://icons.0xhoney.com",
+    summary: "A modern icon library for React",
+  },
+  {
     name: "Calio",
     href: "https://gocalio.com/",
     summary: "A shared business number teams can actually pick up",
