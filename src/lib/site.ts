@@ -18,13 +18,20 @@ export const site = {
   youtube: "https://www.youtube.com/animelordofficial",
   houseOfUgc: "https://www.instagram.com/houseofugc.in/",
   noLag: "https://www.instagram.com/nolagenergy/",
+  gooseworks: "https://gooseworks.ai/",
   location: "India",
 };
 
 export const work = [
   {
-    title: "Freelance",
+    title: "Gooseworks",
     dates: "2025 - now",
+    role: "Design engineer | YC W23",
+    href: site.gooseworks,
+  },
+  {
+    title: "Freelance",
+    dates: "2025",
     role: "Design engineer",
     href: site.github,
   },
