@@ -30,7 +30,7 @@ export const work = [
   },
   {
     title: "Freelance",
-    dates: "2025 - 2026",
+    dates: "2025 - now",
     role: "Design engineer",
     href: site.github,
   },
