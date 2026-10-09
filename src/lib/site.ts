@@ -24,13 +24,13 @@ export const site = {
 export const work = [
   {
     title: "Gooseworks",
-    dates: "2025 - now",
+    dates: "2026 - now",
     role: "Design engineer | YC W23",
     href: site.gooseworks,
   },
   {
     title: "Freelance",
-    dates: "2025",
+    dates: "2025 - 2026",
     role: "Design engineer",
     href: site.github,
   },
