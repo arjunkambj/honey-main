@@ -15,7 +15,6 @@ export const site = {
   email: "hey@0xhoney.com",
   twitter: "https://x.com/arjunkambj",
   github: "https://github.com/arjunkambj",
-  youtube: "https://www.youtube.com/animelordofficial",
   houseOfUgc: "https://www.instagram.com/houseofugc.in/",
   noLag: "https://www.instagram.com/nolagenergy/",
   gooseworks: "https://gooseworks.ai/",
@@ -57,7 +56,7 @@ export const work = [
     title: "YouTube",
     dates: "2019 - 2020",
     role: "Grew channel to 160K subs",
-    href: site.youtube,
+    href: null,
   },
 ] as const;
 
