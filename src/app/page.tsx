@@ -87,8 +87,17 @@ export default function Home() {
                 >
                   Gooseworks
                 </Link>{" "}
-                (YC W23). I'm good at going from nothing to something:
-                designing, building, shipping.
+                (YC W23). I design, build, and ship. Most days that means
+                clauding in{" "}
+                <Link
+                  href="https://claude.com/claude-code"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={inlineLink}
+                >
+                  Claude Code
+                </Link>
+                .
               </p>
               <p>
                 Before this, I grew a{" "}
