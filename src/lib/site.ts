@@ -72,16 +72,6 @@ export const projects = [
     href: "https://icons.0xhoney.com",
     summary: "A modern icon library for React",
   },
-  {
-    name: "Calio",
-    href: "https://gocalio.com/",
-    summary: "A shared business number teams can actually pick up",
-  },
-  {
-    name: "AdMiro",
-    href: "https://www.theadmiro.com/",
-    summary: "Let Claude and Codex run your ads",
-  },
 ] as const;
 
 export const stack = [
