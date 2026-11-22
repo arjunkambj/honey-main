@@ -14,12 +14,12 @@ export function Reveal({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: reduced ? 0 : 32 }}
+      initial={{ opacity: 0, y: reduced ? 0 : 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
-        duration: reduced ? 0 : 0.9,
+        duration: reduced ? 0 : 0.5,
         delay,
-        ease: [0.65, 0, 0.35, 1],
+        ease: [0.33, 1, 0.68, 1],
       }}
     >
       {children}
