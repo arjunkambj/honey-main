@@ -1,4 +1,4 @@
-import { NewTwitterIcon } from "@hugeicons/core-free-icons";
+import { ClaudeIcon, NewTwitterIcon } from "@hugeicons/core-free-icons";
 import Image from "next/image";
 import Link from "next/link";
 import { EmailButton } from "@/components/copy-email";
@@ -88,15 +88,13 @@ export default function Home() {
                   Gooseworks
                 </Link>{" "}
                 (YC W23). I design, build, and ship. Most days that means
-                clauding in{" "}
-                <Link
-                  href="https://claude.com/claude-code"
-                  target="_blank"
-                  rel="noreferrer"
-                  className={inlineLink}
+                clauding
+                <span
+                  aria-hidden="true"
+                  className="ml-1 inline-block align-[-2px]"
                 >
-                  Claude Code
-                </Link>
+                  <Icon icon={ClaudeIcon} className="size-4 text-[#D97757]" />
+                </span>
                 .
               </p>
               <p>
