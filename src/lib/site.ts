@@ -69,7 +69,7 @@ export const projects = [
   },
   {
     name: "Honey Icons",
-    href: "https://icons.0xhoney.com",
+    href: "https://honeyicons.com/",
     summary: "A modern icon library for React",
   },
 ] as const;
